@@ -34,7 +34,6 @@ summary(svyglm(rel~factor(stage)*factor(histol),design=gccs8,family=quasibinomia
 ## For this saturated model calibration is equivalent to estimating weights.
 pccs8<-calibrate(dccs2, phase=2,formula=~interaction(rel,stage,instit), calfun="rrz")
 summary(svyglm(rel~factor(stage)*factor(histol),design=pccs8,family=quasibinomial()))
-# pccs <- calibrate(dccs2, phase=2, formula=~instit, population=nwtco$histol)
 
 ## Since sampling is SRS at phase 1 and stratified RS at phase 2, we
 ## can use method="simple" to save memory.
